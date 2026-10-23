@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technology updates, community news, product announcements, and learning resources from Gid Paragon.">
+    <meta name="theme-color" content="#0B132B">
+    <title>Blog | Gid Paragon</title>
+    <link rel="icon" href="Images/gidparagon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <nav aria-label="Main navigation">
+        <a href="index.html" class="logo">
+            <img src="Images/gidparagon.png" alt="Gid Paragon logo">
+            <span>Gid Paragon</span>
+        </a>
+        <ul id="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
+            <li><a href="index.html#products">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button id="menu" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu">☰</button>
+    </nav>
+
+    <main class="blog-page">
+        <header class="blog-hero">
+            <p class="blog-eyebrow">GID PARAGON INSIGHTS</p>
+            <h1>Ideas, updates, and <span>what we are building.</span></h1>
+            <p>Technology updates, community news, product announcements, and practical learning resources from the Gid Paragon team.</p>
+        </header>
+
+        <section class="blog-toolbar" aria-label="Blog filters">
+            <div class="search-wrap">
+                <label for="post-search">Search posts</label>
+                <input id="post-search" type="search" placeholder="Search by title, summary, or tag" autocomplete="off">
+            </div>
+            <div>
+                <p class="filter-label">Filter by category</p>
+                <div id="category-filters" class="category-filters" aria-label="Post categories"></div>
+            </div>
+        </section>
+
+        <section id="featured-section" class="featured-section" aria-labelledby="featured-heading" hidden>
+            <div class="section-heading">
+                <p class="blog-eyebrow">HIGHLIGHTED</p>
+                <h2 id="featured-heading">Featured post</h2>
+            </div>
+            <div id="featured-post"></div>
+        </section>
+
+        <section id="listing-view" aria-labelledby="posts-heading">
+            <div class="section-heading">
+                <p class="blog-eyebrow">FROM THE JOURNAL</p>
+                <h2 id="posts-heading">Latest posts</h2>
+            </div>
+            <div id="post-list" class="post-grid" aria-live="polite"></div>
+            <p id="empty-state" class="empty-state" hidden>No posts match your search. Try a different term or category.</p>
+            <p id="load-error" class="empty-state" hidden>We could not load the blog posts right now. Please refresh the page and try again.</p>
+        </section>
+
+        <article id="post-view" class="post-view" aria-live="polite" hidden></article>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="Images/gidparagon.png" alt="Gid Paragon">
+            <h2>Gid Paragon</h2>
+        </div>
+        <p>Engineering Intelligent Software for a Connected Future.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="mailto:example@gmail.com">Email</a>
+        </div>
+        <p class="copyright">© 2026 Gid Paragon. All Rights Reserved.</p>
+    </footer>
+
+    <script src="blog.js" defer></script>
+</body>
+</html>

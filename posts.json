@@ -1,0 +1,62 @@
+[
+    {
+        "id": "building-a-stronger-gid-paragon-community",
+        "title": "Building a stronger Gid Paragon community",
+        "excerpt": "We are bringing our engineering, product, and learning conversations into one open community for people building the future with technology.",
+        "date": "2026-10-15",
+        "category": "Company Update",
+        "featured": true,
+        "tags": ["Gid Paragon", "Community", "Company News"],
+        "author": "Gid Paragon Team",
+        "readTime": 4,
+        "coverImage": "",
+        "url": "",
+        "content": [
+            { "type": "paragraph", "text": "Gid Paragon is a technology community and company focused on building useful, secure, and accessible software." },
+            { "type": "heading", "level": 2, "text": "What is changing" },
+            { "type": "paragraph", "text": "We are creating more spaces for developers, students, founders, and technology teams to learn from one another and share practical ideas." },
+            { "type": "list", "items": ["More technical learning resources", "Community-led conversations and events", "Regular updates about our products and experiments"] },
+            { "type": "paragraph", "text": "Thank you to everyone contributing their time, questions, and experience. We are excited to build the next chapter together." }
+        ]
+    },
+    {
+        "id": "why-observability-matters-for-small-teams",
+        "title": "Why observability matters for small engineering teams",
+        "excerpt": "A practical introduction to logs, metrics, and traces, and how small teams can use them to make systems easier to understand.",
+        "date": "2026-09-28",
+        "category": "Technology",
+        "featured": false,
+        "tags": ["Observability", "Cloud", "Engineering"],
+        "author": "Gid Paragon Team",
+        "readTime": 6,
+        "coverImage": "",
+        "url": "",
+        "content": [
+            { "type": "paragraph", "text": "Observability helps a team answer an important question: what is happening inside our system right now?" },
+            { "type": "heading", "level": 2, "text": "Three useful signals" },
+            { "type": "paragraph", "text": "Logs provide detailed events, metrics show changes over time, and traces follow a request across services. Together, these signals turn an outage from a guessing exercise into an investigation." },
+            { "type": "heading", "level": 3, "text": "Start with the questions your team asks" },
+            { "type": "paragraph", "text": "You do not need a complex platform on day one. Begin by recording the signals that help answer your most common support and reliability questions." }
+        ]
+    },
+    {
+        "id": "a-small-javascript-project-with-big-learning",
+        "title": "A small JavaScript project with big learning",
+        "excerpt": "How a focused community exercise can teach the fundamentals of data, rendering, and accessible interaction without a framework.",
+        "date": "2026-08-12",
+        "category": "Learning",
+        "featured": false,
+        "tags": ["JavaScript", "Learning", "Community"],
+        "author": "Gid Paragon Team",
+        "readTime": 5,
+        "coverImage": "",
+        "url": "",
+        "content": [
+            { "type": "paragraph", "text": "Small projects are a great way to practice the complete path from data to interface. A simple reading list can teach useful habits that transfer to larger applications." },
+            { "type": "heading", "level": 2, "text": "Keep rendering predictable" },
+            { "type": "code", "language": "javascript", "text": "const visiblePosts = posts.filter(post => post.title.includes(query));\nrenderPosts(visiblePosts);" },
+            { "type": "paragraph", "text": "The important lesson is not the size of the project. It is learning to keep data, state, and UI updates clear enough that another person can understand and improve them." },
+            { "type": "list", "items": ["Use meaningful names", "Make keyboard interactions work", "Handle empty and error states"] }
+        ]
+    }
+]

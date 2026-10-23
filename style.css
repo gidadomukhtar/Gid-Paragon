@@ -2,24 +2,21 @@
    GID PARAGON WEBSITE V2.0
    Modern Software Company Theme
 ===================================================== */
-        /* GOOGLE FONT */
-        
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
         /* ==========================
         ROOT VARIABLES
 ========================== */
         
          :root {
-            --bg: #081120;
+            --bg: #0B132B;
             --bg2: #101B31;
-            --card: #13213D;
+            --card: #1C2541;
             --primary: #3FA9F5;
             --secondary: #FDC500;
             --white: #ffffff;
-            --text: #E8EEF7;
+            --text: #E5E5E5;
             --muted: #A7B6C7;
-            --radius: 18px;
-            --shadow: 0 8px 20px rgba(0, 0, 0, .25);
+            --radius: 12px;
+            --shadow: 0 10px 24px rgba(0, 0, 0, .18);
         }
         /* ==========================
         RESET
@@ -36,64 +33,10 @@
         }
         
         body {
-            font-family: "Inter", sans-serif;
-            background: linear-gradient( 135deg, var(--bg), var(--bg2));
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
             color: var(--text);
             overflow-x: hidden;
-        }
-        /* ==========================
-    BACKGROUND ANIMATION
-========================== */
-        
-        .bg-animation {
-            position: fixed;
-            inset: 0;
-            overflow: hidden;
-            z-index: -2;
-        }
-        
-        .bg-animation span {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            filter: blur(35px);
-            animation: float 30s ease-in-out infinite;
-            will-change: transform;
-        }
-        
-        .bg-animation span:nth-child(1) {
-            background: #1f6bff55;
-            top: -120px;
-            left: -80px;
-        }
-        
-        .bg-animation span:nth-child(2) {
-            background: #fdc50033;
-            right: -100px;
-            top: 10%;
-        }
-        
-        .bg-animation span:nth-child(3) {
-            background: #00b8ff33;
-            bottom: -120px;
-            left: 20%;
-        }
-        
-        .bg-animation span:nth-child(4) {
-            background: #3FA9F533;
-            bottom: 5%;
-            right: 10%;
-        }
-        
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-40px) scale(1.12);
-            }
         }
         /* ==========================
         NAVBAR
@@ -108,12 +51,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 18px 8%;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
             background: rgba(8, 17, 32, .72);
             border-bottom: 1px solid rgba(255, 255, 255, .08);
             z-index: 1000;
             transition: .4s;
+            height: 30px;
         }
         
         .logo {
@@ -124,8 +66,8 @@
         }
         
         .logo img {
-            width: 62px;
-            height: 62px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
         }
         
@@ -361,7 +303,6 @@
             display: flex;
             gap: 20px;
             width: max-content;
-            animation: marquee 30s linear infinite;
         }
         
         .tech-scroll span {
@@ -380,14 +321,6 @@
             transform: translateY(-5px);
         }
         
-        @keyframes marquee {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-50%);
-            }
-        }
         /* =====================================================
             ABOUT
     ===================================================== */
@@ -436,8 +369,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 45px rgba(63, 169, 245, .45);
-            animation: pulse 3s infinite;
+            box-shadow: 0 0 25px rgba(63, 169, 245, .18);
         }
         
         .center-logo img {
@@ -537,33 +469,6 @@
         .why-card p {
             line-height: 1.8;
             color: var(--muted);
-        }
-        /* =====================================================
-            ANIMATIONS
-    ===================================================== */
-        
-        @keyframes pulse {
-            0%,
-            100% {
-                box-shadow: 0 0 35px rgba(63, 169, 245, .4);
-            }
-            50% {
-                box-shadow: 0 0 70px rgba(253, 197, 0, .55);
-            }
-        }
-        
-        @keyframes spinSlow {
-            from {
-                transform: rotate(0);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        /* Keep logo upright */
-        
-        .center-logo {
-            animation: pulse 3s infinite;
         }
         /* =====================================================
         SERVICES
@@ -905,3 +810,427 @@
                 scroll-behavior: auto !important;
             }
         }
+
+/* =====================================================
+   VISUAL REFINEMENT
+   Compact spacing, quiet surfaces, and purposeful motion.
+===================================================== */
+
+body {
+    background: var(--bg);
+    font-size: 15px;
+}
+
+.bg-animation {
+    display: none;
+}
+
+nav {
+    height: auto;
+    min-height: 68px;
+    padding: 10px 6%;
+    background: rgba(11, 19, 43, .96);
+    border-bottom-color: rgba(229, 229, 229, .1);
+    transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+nav.scrolled {
+    background: rgba(11, 19, 43, .98);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+}
+
+.logo {
+    gap: 10px;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+}
+
+.logo span {
+    font-size: 1.05rem;
+    letter-spacing: -.2px;
+}
+
+#nav-links {
+    gap: 24px;
+}
+
+#nav-links a {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+#nav-links a::after {
+    bottom: -5px;
+    height: 1px;
+    transition: width .2s ease;
+}
+
+#menu {
+    font-size: 26px;
+    line-height: 1;
+}
+
+.hero {
+    min-height: 680px;
+    padding: 132px 8% 72px;
+    gap: 42px;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -.04em;
+}
+
+.hero p {
+    max-width: 590px;
+    margin-bottom: 26px;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.hero-tag,
+.section-tag {
+    padding: 7px 12px;
+    margin-bottom: 16px;
+    border-radius: 999px;
+    font-size: .72rem;
+    letter-spacing: 1px;
+}
+
+.typing-box {
+    height: 26px;
+    margin-bottom: 24px;
+    font-size: .95rem;
+}
+
+.hero-buttons {
+    justify-content: flex-start;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: .9rem;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+button:hover {
+    transform: none;
+}
+
+.hero-cards {
+    width: 305px;
+    gap: 12px;
+}
+
+.floating-card,
+.why-card,
+.service-card,
+.product-card {
+    background: var(--card);
+    border: 1px solid rgba(229, 229, 229, .1);
+    border-radius: var(--radius);
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+.floating-card {
+    padding: 19px;
+}
+
+.floating-card h3 {
+    margin-bottom: 7px;
+    font-size: 1rem;
+}
+
+.floating-card p,
+.why-card p,
+.service-card p,
+.product-card p {
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+section {
+    padding: 72px 8%;
+}
+
+.section-header {
+    max-width: 680px;
+    margin-bottom: 42px;
+}
+
+.section-header h2 {
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -.03em;
+}
+
+.section-header p {
+    font-size: .98rem;
+    line-height: 1.7;
+}
+
+.technologies {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid rgba(229, 229, 229, .08);
+    border-bottom: 1px solid rgba(229, 229, 229, .08);
+}
+
+.tech-scroll {
+    width: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    animation: none;
+}
+
+.tech-scroll span {
+    padding: 7px 11px;
+    border-radius: 6px;
+    color: var(--muted);
+    font-size: .8rem;
+}
+
+.tech-scroll span:hover {
+    transform: none;
+    background: var(--card);
+    color: var(--secondary);
+}
+
+.about-grid {
+    gap: 56px;
+}
+
+.about-text h3 {
+    margin-bottom: 16px;
+    font-size: 1.6rem;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+.about-circle {
+    width: 390px;
+    height: 390px;
+    border-width: 1px;
+}
+
+.center-logo {
+    width: 96px;
+    height: 96px;
+    box-shadow: 0 0 25px rgba(63, 169, 245, .18);
+    animation: none;
+}
+
+.center-logo img {
+    width: 62px;
+}
+
+.orbit {
+    width: 138px;
+    padding: 10px;
+    border-radius: 9px;
+    background: var(--card);
+    font-size: .82rem;
+}
+
+.right {
+    right: -45px;
+}
+
+.left {
+    left: -45px;
+}
+
+.top,
+.bottom {
+    left: 50%;
+}
+
+.why-grid,
+.services-grid {
+    gap: 16px;
+}
+
+.why-card,
+.service-card {
+    padding: 23px;
+    transition: border-color .2s ease, background-color .2s ease;
+}
+
+.why-card:hover,
+.service-card:hover {
+    transform: none;
+    border-color: rgba(253, 197, 0, .6);
+    box-shadow: none;
+}
+
+.icon,
+.service-icon {
+    margin-bottom: 13px;
+    font-size: 1.8rem;
+}
+
+.why-card h3,
+.service-card h3,
+.product-card h3 {
+    margin-bottom: 9px;
+    font-size: 1.05rem;
+}
+
+.service-card::before {
+    height: 2px;
+    transition: transform .2s ease;
+}
+
+.project-grid {
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.product-card {
+    padding: 23px;
+    transition: border-color .2s ease;
+}
+
+.product-card:hover {
+    transform: none;
+    border-color: rgba(253, 197, 0, .6);
+    box-shadow: none;
+}
+
+.cta-section {
+    padding: 72px 8%;
+}
+
+.cta-box {
+    padding: 46px 30px;
+    border-radius: var(--radius);
+    box-shadow: none;
+}
+
+.cta-box h2 {
+    margin: 14px 0;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.cta-box p {
+    margin-bottom: 26px;
+    line-height: 1.7;
+}
+
+form {
+    max-width: 650px;
+    gap: 13px;
+}
+
+input,
+textarea {
+    padding: 13px 14px;
+    border-radius: 8px;
+    font-size: .95rem;
+}
+
+button {
+    padding: 12px 18px;
+    font-size: .9rem;
+}
+
+footer {
+    padding: 45px 8%;
+    margin-top: 35px;
+}
+
+.footer-logo {
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.footer-logo img {
+    width: 44px;
+    height: 44px;
+}
+
+.footer-logo h2 {
+    font-size: 1.35rem;
+}
+
+.footer-links {
+    gap: 22px;
+    margin: 20px 0;
+}
+
+.copyright {
+    margin-top: 18px;
+    font-size: .85rem;
+}
+
+@media (max-width: 1100px) {
+    .hero {
+            min-height: auto;
+    }
+    .about-circle {
+            transform: scale(.9);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+            min-height: 62px;
+            padding: 9px 6%;
+    }
+    #nav-links {
+            top: 62px;
+            width: 240px;
+            height: auto;
+            min-height: calc(100vh - 62px);
+            padding: 26px;
+            gap: 20px;
+            background: var(--bg);
+            border-left: 1px solid rgba(229, 229, 229, .1);
+    }
+    .hero {
+            padding-top: 112px;
+            padding-bottom: 60px;
+            text-align: left;
+    }
+    .hero-buttons {
+            justify-content: flex-start;
+    }
+    .hero-cards {
+            max-width: 100%;
+    }
+    .about-circle {
+            width: 300px;
+            height: 300px;
+            transform: scale(.85);
+    }
+    .orbit {
+            width: 120px;
+            font-size: .75rem;
+    }
+    .right {
+            right: -38px;
+    }
+    .left {
+            left: -38px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+            scroll-behavior: auto;
+    }
+}
