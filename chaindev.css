@@ -91,7 +91,7 @@ section {
 }
 
 .brand-icon {
-    width 42px;
+    width: 42px;
     height: 42px;
     display: grid;
     place-items: center;
@@ -735,4 +735,284 @@ section {
 /* CONTACT */
 .contact-section {
     padding-top: 20px;
+}
+
+.contact-card {
+    text-align: center;
+    padding: clamp(35px, 6vw, 75px) 25px;
+    border-radius: 24px;
+    border: 1px solid rgba(242, 198, 109, 0.23);
+    background: 
+        radial-gradient(
+            ellipse at 50% 0,
+            rgba(242, 198, 109, 0.12),
+            transparent 55%
+        ),
+        var(--surface);
+}
+
+.contact-card h2 {
+    max-width: 800px;
+    margin: 22px auto 0;
+    font-size: clamp(2rem, 4.4vw 3.5rem);
+    line-height: 1.2;
+    letter-spacing: -1.6px;
+}
+
+.contact-card > p:not(.contact-note) {
+    max-width: 650px;
+    margin: 22px auto 0;
+    color: var(--muted);
+}
+
+.contact-actions {
+    justify-content: center;
+}
+
+.contact-note {
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 0.76rem;
+}
+
+/*FOOTER */
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    background: #060a12;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 25px;
+    padding-block: 30px;
+}
+
+.footer-content > p,
+.copyright {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.footer-content > p {
+    text-align: center;
+}
+
+/*ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/*TABLETS */
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 3.8rem);
+    }
+
+    .about-grid,
+    .vision-grid {
+        gap: 45px;
+    }
+
+    .founder-grid {
+        gap: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content > p {
+        text-align: right;
+    }
+
+    .copyright {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+}
+
+/* MOBILE NAVIGATION */
+
+@media (max-width: 700px) {
+    .container {
+        width: min(100% - 32px, var(--container));
+    }
+
+    .navbar {
+        min-height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 16px 20px;
+        background: #0b1220;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links > a {
+        padding: 13px 8px;
+    }
+
+    .nav-links > a.nav-cta {
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-block: 75px 80px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        letter-spacing: -1.8px;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+    }
+
+    .hero-visual {
+        min-height: 370px;
+        margin-top: 10px;
+    }
+
+    .network-card {
+        width: min(100% - 30px, 360px);
+    }
+
+    .orbit-one {
+        width: 320px;
+        height: 320px;
+    }
+
+    .orbit-two {
+        width: 370px;
+        height: 370px;
+    }
+
+    .tag-top {
+        top: 15px;
+        right: -2px;
+    }
+
+    .tag-bottom {
+        bottom: 15px;
+        left: -2px;
+    }
+
+    .section {
+        padding-block: 75px;
+    }
+
+    .about-grid,
+    .vision-grid,
+    .founder-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-grid .section-heading {
+        position: static;
+    }
+
+    .mission-section {
+        padding-top: 0;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+        margin-top: 35px;
+    }
+
+    .activity-card {
+        padding: 25px;
+    }
+
+    .founder-monogram {
+        width: min(70%, 230px);
+    }
+
+    .founder-monogram > span {
+        font-size: 3.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-content > p {
+        text-align: center;
+    }
+
+    .copyright {
+        grid-column: auto;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+    .hero-actions,
+    .contact-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .floating-tag {
+        font-size: 0.68rem;
+        padding: 9px 10px;
+    }
 }
