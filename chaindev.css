@@ -172,8 +172,8 @@ section {
 
 .hero-glow {
     position: absolute;
-    width: 420%;
-    height: 420%;
+    width: 140%;
+    height: 140%;
     border-radius: 50%;
     filter: blur(110px);
     pointer-events: none;
@@ -628,7 +628,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
-    gap: 85ox;
+    gap: 85px;
 }
 
 .vision-grid h2 {
@@ -754,7 +754,7 @@ section {
 .contact-card h2 {
     max-width: 800px;
     margin: 22px auto 0;
-    font-size: clamp(2rem, 4.4vw 3.5rem);
+    font-size: clamp(2rem, 4.4vw, 3.5rem);
     line-height: 1.2;
     letter-spacing: -1.6px;
 }
@@ -909,7 +909,7 @@ button:focus-visible {
     }
 
     .hero h1 {
-        font-size: clamp(2.5rem, 10vw, 4rem);
+        font-size: clamp(2.35rem, 8vw, 3.2rem);
         letter-spacing: -1.8px;
     }
 
