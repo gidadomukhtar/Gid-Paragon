@@ -17,7 +17,7 @@
             ],
             "author": "Gid Paragon Team",
             "readTime": 8,
-            "CoverImage": "",
+            "coverImage": "",
             "url": "",
             "content": [
                 {
@@ -77,7 +77,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "type": "This short example introduces variables, data types, and string interpolation. As you progress, practice methods, conditions, loops, classes, collections, error handling, and asynchronous code rather than memorizing syntax alone."
+                    "text": "This short example introduces variables, data types, and string interpolation. As you progress, practice methods, conditions, loops, classes, collections, error handling, and asynchronous code rather than memorizing syntax alone."
                 },
                 {
                     "type": "heading",
@@ -344,12 +344,53 @@
             heading.append(text(item.text));
             container.append(heading);
         } else if (item.type === "code") {
+            const wrapper = document.createElement("div");
+            wrapper.className = "code-block-wrapper";
+
+            const toolbar = document.createElement("div");
+            toolbar.className = "code-toolbar";
+
+            const language = document.createElement("span")
+            language.className = "code-language";
+            language.textContent = item.language || "code";
+
+            const copyButton = document.createElement("button");
+            copyButton.type = "button";
+            copyButton.className = "copy-code-button";
+            copyButton.setAttribute("aria-label", "Copy code example");
+
             const pre = document.createElement("pre");
             const code = document.createElement("code");
-            if (item.language) code.className = "language-" + String(item.language).replace(/[^a-z0-9-]/gi, "");
+
+            if (item.language) {
+                code.className = "language-" +
+                    String(item.language).replace(/[^a-z0-9-]/gi, "");
+            }
+
             code.append(text(item.text));
+
+            copyButton.append(text("Copy"));
+            copyButton.addEventListener("click", async () => {
+                try {
+                    if (!navigator.clipboard) {
+                        throw new Error("Clipboard access is unavailable");
+                    }
+                    await navigator.clipboard.writeText(item.text || "");
+                    copyButton.textContent = "Copied";
+                } catch (error) {
+                    copyButton.textContent = "Copy failed";
+                }
+                window.setTimeout(() => {
+                    copyButton.textContent = "Copy";
+                }, 2000);
+            });
+
+            toolbar.append(language, copyButton);
             pre.append(code);
-            container.append(pre);
+            wrapper.append(toolbar, pre);
+            container.append(wrapper);
+
+
         } else if (item.type === "list" && Array.isArray(item.items)) {
             const list = document.createElement("ul");
             item.items.forEach((entry) => {
@@ -436,7 +477,12 @@
             externalLink.className = "external-link";
             externalLink.target = "_blank";
             externalLink.rel = "noopener noreferrer";
-            externalLink.href = /^https?:\/\//i.test(post.url) ? post.url : "#";
+            if (!/^https?:\/\//i.test(post.url)) {
+                externalLink.setAttribute("aria-disabled", "true");
+                externalLink.classList.add("is-disabled");
+            } else {
+                externalLink.href = post.url;
+            }
             externalLink.append(text("Read on external site"));
             postView.append(externalLink);
         } else {
@@ -486,6 +532,7 @@
     function setupNavigation() {
         const menu = $("#menu");
         const nav = $("#nav-links");
+        if (!menu || !nav) return;
         menu.addEventListener("click", () => {
             const expanded = nav.classList.toggle("show");
             menu.setAttribute("aria-expanded", String(expanded));
@@ -497,7 +544,8 @@
             menu.setAttribute("aria-label", "Open navigation menu");
         }));
         window.addEventListener("scroll", () => {
-            document.querySelector("nav").classList.toggle("scrolled", window.scrollY > 50);
+            const navbar = document.querySelector("nav");
+            if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 50);
         });
     }
 
@@ -516,7 +564,8 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         setupNavigation();
-        $("#post-search").addEventListener("input", (event) => {
+        const search = $("#post-search");
+        if (search) search.addEventListener("input", (event) => {
             searchTerm = event.target.value.trim().toLowerCase();
             renderListing();
         });
