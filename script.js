@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("scroll", updateNavbar, { passive: true });
     }
 
+    const currentYear = document.getElementById("currentYear");
+    if (currentYear) {
+        currentYear.textContent = String(new Date().getFullYear());
+    }
+
     const sections = document.querySelectorAll("main section[id], section[id]");
     const links = document.querySelectorAll("#nav-links a");
     if (sections.length && links.length) {

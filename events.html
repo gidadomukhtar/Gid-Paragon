@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover ChainDev hackathons, developer workshops, build sessions, community meetups, and open-source events.">
+
+    <meta name="theme-color" content="#0B132B">
+
+    <title>Events | ChainDev</title>
+
+    <link rel="icon" href="Images/gidparagon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="events.css">
+
+    <script src="events.js" defer></script>
+</head>
+
+<body class="events-page">
+    
+    <nav aria-label="Main navigation">
+        <a href="index.html" class="logo">
+            <img src="Images/gidparagon.png" alt="Gid Paragon logo">
+            <span>ChainDev</span>
+        </a>
+
+        <ul id="nav-links">
+            <li><a href="chaindev.html">Community</a> </li>
+            <li><a href="events.html" class="active" aria-current="page">Events</a></li>
+            <li><a href="chaindev.html#activities">Projects</a></li>
+            <li><a href="chaindev.html#contact">Join us</a></li>
+            <li><a href="index.html">Gid Paragon</a></li>
+        </ul>
+
+        <button
+            id="menu"
+            type="button"
+            aria-controls="nav-links"
+            aria-expanded="false"
+            aria-label="Open navigation menu">
+            ☰
+        </button>
+    </nav>
+
+    <main id="page">
+        <!--HERO-->
+        <section class="events-hero">
+            <div class="events-hero-content">
+                <p class="eyebrow">
+                    <span class="status-dot"></span>
+                    THE CHAINDEV COMMUNITY
+                </p>
+
+                <h1>
+                    Where developers
+                    <span>come together.</span>
+                </h1>
+
+                <p class="hero-description">
+                    From hackathons and hands-on workshops to collaborative
+                    build sessions, find opportunities to learn, connect,
+                    and turn ideas into real projects.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#upcoming" class="btn btn-primary">
+                        Explore events <span aria-hidden="true">↘</span>
+                    </a>
+
+                    <a href="chaindev.html#contact" class="btn btn-primary">
+                        Join ChainDev
+                    </a>                    
+                </div>
+
+                <div class="hero-values">
+                    <span><span class="value-mark">01</span> Learn together</span>
+                    <span><span class="value-mark">02</span> Build together</span>
+                    <span><span class="value-mark">03</span> Grow together</span>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <div class="visual-glow"></div>
+
+                <div class="visual-grid"></div>
+
+                <div class="visual-orbit orbit-one"></div>
+                <div class="visual-orbit orbit-two"></div>
+
+                <div class="visual-core">
+                    <span class="core-symbol">&lt;/&gt;</span>
+                    <span class="core-name">CHAINDEV</span>
+                    <span class="core-caption">BUILD SOMETHING REAL</span>
+                </div>
+
+                <div class="floating-node node-top">
+                    <span class="node-icon">⌘</span>
+                    <span>Collaborate</span>
+                </div>
+
+                <div class="floating-node node-left">
+                    <span class="node-icon">↗</span>
+                    <span>Build</span>
+                </div>
+
+                <div class="floating-node node-right">
+                    <span class="node-icon">＋</span>
+                    <span>Learn</span>
+                </div>
+
+                <div class="floating-node node-bottom">
+                    <span class="node-icon">◇</span>
+                    <span>Share</span>
+                </div>
+            </div>
+        </section>
+
+        <!--FEATURED EVENT-->
+        <section class="featured-section page-section" id="featured">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">DON'T MISS OUT</p>
+                    <h2>Featured event<span class="heading-period">.</span></h2>
+                </div>
+                <p class="section-description">
+                    The event we're putting in the spotlight.
+                </p>
+            </div>
+
+            <div id="featured-event" class="featured-event">
+                <div class="event-placeholder">
+                    <span class="placeholder-icon">✳</span>
+                    <h3>Something exciting is in the works.</h3>
+                    <p>
+                        Our next featured event will appear here once
+                        the details are confirmed.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!--UPCOMING EVENTS-->
+        <section class="upcoming-section page-section" id="upcoming">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR NEXT OPPORTUNITY</p>
+                    <h2>Upcoming events<span class="heading-period">.</span></h2>
+                </div>
+
+                <p class="section-description">
+                    Find your next opportunity to learn, build, and connect.
+                </p>
+            </div>
+
+            <div class="event-tools">
+                <label class="event-search">
+                    <span aria-hidden="true">⌕</span>
+                    <span class="visually-hidden">Search events</span>
+                    <input
+                        type="search"
+                        id="event-search"
+                        placeholder="Search events, topics, or locations..."
+                        autocomplete="off">
+                </label>
+
+                <label class="filter-select">
+                    <span class="visually-hidden">Filter by event type</span>
+                    <select id="event-filter">
+                        <option value="all">All event types</option>
+                        <option value="hackathon">Hackathons</option>
+                        <option value="workshop">Workshops</option>
+                        <option value="meetup">Meetups</option>
+                        <option value="build-session">Build sessions</option>
+                        <option value="online">Online events</option>
+                    </select>
+                </label>
+            </div>
+
+            <div 
+                id="events-grid"
+                class="events-grid"
+                aria-live="polite">
+            </div>
+
+            <div id="events-empty" class="events-empty" hidden>
+                <span class="empty-icon">⌕</span>
+                <h3>No events found</h3>
+                <p>
+                    Try a different search or category. If no events
+                    are scheduled, check back soon.
+                </p>
+                <button id="reset-filters" class="btn btn-secondary" type="button">
+                    Clear filters
+                </button>
+            </div>
+        </section>
+
+        <!--PAST EVENTS-->
+        <section class="past-section page-section" id="past-events">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">OUR COMMUNITY IN ACTION</p>
+                    <h2>Past events<span class="heading-period">.</span></h2>
+                </div>
+
+                <p class="section-description">
+                    A growing record of what we've learned and built together.
+                </p>
+            </div>
+
+            <div id="past-events-grid" class="past-events-grid"></div>
+
+            <div id="past-events-empty" class="past-empty">
+                <span class="past-line"></span>
+                <p>
+                    Our event archive is growing. Completed events and
+                    community highlights will be shared here.
+                </p>
+            </div>
+        </section>
+
+        <!--COMMUNITY CTA-->
+        <section class="events-cta page-section">
+            <div class="cta-decoration" aria-hidden="true">&lt;/&gt;</div>
+
+            <div class="cta-content">
+                <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+
+                <h2>
+                    Don't just watch technology evolve.
+                    <span>Build it with us.</span>
+                </h2>
+
+                <p>
+                    Meet other developers, work on meaningful projects,
+                    and take your next step with ChainDev.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="chaindev.html#contact" class="btn btn-primary">
+                        Become part of ChainDev <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--FOOTER SECTION-->
+    <footer class="events-footer">
+        <div class="footer-main">
+            <a href="chaindev.html" class="footer-brand">
+                <span class="footer-brand-mark">&lt;/&gt;</span>
+                <span>ChainDev</span>
+            </a>
+
+            <p>
+                A community of developers learning, building,
+                and growing together.
+            </p>
+
+            <div class="footer-links">
+                <a href="chaindev.html">Community</a>
+                <a href="#upcoming">Events</a>
+                <a href="chaindev.html#activities">Projects</a>
+                <a href="index.html">Gid Paragon</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="current-year">2026</span> ChainDev</span>
+            <span>Learn together. Build together. Grow together.</span>
+        </div>
+    </footer>
+    
+</body>
+</html>
